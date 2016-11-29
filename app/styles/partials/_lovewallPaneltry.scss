@@ -1,0 +1,441 @@
+@import "../../../bower_components/compass-sass-mixins/lib/compass";
+
+.lovewallPaneltry{
+  height:100%;
+  width:100%;
+ -webkit-tap-highlight-color:transparent;
+  background-color: $bg-color;
+  font-size:$secondary-fontsize;
+
+    .iphone{
+        width:100%;
+        height: 100%;
+    }
+    .iphone__upper{
+        width:100%;
+        height:50px;
+        background-color: #fff;
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        .toppanel-box {
+            width: 50%;
+            text-align: center;
+            line-height: 50px;
+            border-bottom: 2px solid #fff;
+            color: #ccc;
+            font-size: $primary-fontsize;
+            font-weight: bold;
+        }
+        .toppanel-box-on {
+            border-bottom: 2px solid darken($highlight2-color,10%);
+            color: darken($highlight2-color,10%);
+        }
+
+    }
+    .list__wrapper{
+  @include transform(translate3d(0,-186px,0));
+  background-color: $bg-color;
+  overflow-y:scroll;
+ margin-bottom:-186px;
+ padding-top:50px;
+    }
+    .mainview{
+  // opacity:0.2;
+  cursor: -webkit-grab;
+  cursor: grab;
+  position: relative;
+    padding-bottom: 0px;
+    z-index: 1;
+      &:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+        .mainview-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            .mainview-box-dialog {
+                position: relative;
+                background-color: lighten($highlight2-color, 10%);
+                // background-color:rgba(203,133,137,0.8);
+                width: 90%;
+                padding-top: 5px;
+                border-radius: 5px;
+                color: $verse-color;
+                a{
+                    color: $verse-color;
+                }
+                .dialog-toppanel {
+                    display: flex;
+                    align-items: center;
+                    padding: 5px;
+                    margin-bottom: 5px;
+                    .icon {
+                        margin-left: 5px;
+                        width: 30px;
+                        height: 30px;
+                        fill: currentColor;
+                        overflow: hidden;
+                    }
+                    .fromwho {
+                        margin-left: 5px;
+                        font-weight: bold;
+                    }
+                    .towhom {
+                        margin-left: 5px;
+                        font-weight: bold;
+                    }
+                    .time {
+                        font-size: $small-fontsize;
+                        position: absolute;
+                        right: 5px;
+                    }
+                }
+                .text {
+                    padding: 10px;
+                    a{
+                        color: $verse-color;
+                    }
+                }
+                .dialog-bottompanel {
+                    margin-top: 10px;
+                    height: 30px;
+                    width: 100%;
+                    display: flex;
+                    .dialog-bottompanel-like {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: lighten($highlight2-color, 20%);
+                        border-bottom-left-radius: 5px;
+                        .iconlike {
+                            width: 15px;
+                            height: 15px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                        .count {
+                            margin-left: 5px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                    }
+                    .dialog-bottompanel-comment {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-left: 1px solid $verse-color;
+                        background: lighten($highlight2-color, 20%);
+                        border-bottom-right-radius: 5px;
+                        .iconcomment {
+                            width: 15px;
+                            height: 15px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                        .count {
+                            margin-left: 5px;
+                            fill: #fff;
+                            overflow: hidden;
+                            color: $verse-color;
+                        }
+                    }
+                }
+            }
+    }
+    .mainview-box-reverse {
+            .mainview-box-dialog {
+                background: lighten($highlight-color, 10%);
+                .dialog-bottompanel {
+                    .dialog-bottompanel-like {
+                        background: lighten($highlight-color, 20%);
+                    }
+                    .dialog-bottompanel-comment {
+                        background: lighten($highlight-color, 20%);
+                    }
+                }
+            }
+    }
+}
+    .loadmore{
+        height: 40px;
+        width: 100%;
+        padding-left:15px;
+        line-height: 40px;
+        font-size: $secondary-fontsize;
+        color: #ccc;
+    }
+
+
+    .svg__wrapper{
+  position: relative;
+  z-index: 10;
+  background-color: $highlight-color;
+  cursor: -webkit-grab;
+  cursor: grab;
+  &:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+  svg{
+    &:first-child{
+      @include transform(translate3d(0,93px,0));
+    }
+    &:nth-child(2){
+      position: absolute;
+      top:93px;
+      left:50%;
+      margin-left: -45px;
+    }
+    #progress{
+      stroke-dashoffset:345.6;
+      stroke-dasharray:345.6;
+    }
+  }
+  .border{
+    position: absolute;
+    top:100%;
+    width:100%;
+    height:20px;
+    background-color: #fff;
+  }
+    }
+    .bottompanel {
+        position: fixed;
+        bottom: 5px;
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        z-index: 10;
+        
+        .bar {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -30px;
+            width: 0;
+            height: 0;
+            border: 30px solid $verse-color;
+            border-radius: 100%;
+            z-index: 10;
+        }
+            .iconpost {
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            top:50%;
+            margin-top: -20px;
+            left:50%;
+            margin-left: -23px;
+            fill: $riflered-color;
+            overflow: hidden;
+            z-index: 10;
+            }
+        .bar2 {
+            content: "";
+            position: absolute;
+            bottom:0;
+            right: 2%;
+            width: 0;
+            height: 0;
+            border: 20px solid rgba(255,255,255,.8);
+            border-radius: 100%;
+            z-index: 10;
+        }
+            .iconbacktop {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 2%;
+            margin-right:5px;
+            bottom:0;
+            margin-bottom:5px;
+            fill: $secondary-color;
+            overflow: hidden;
+            z-index: 10;
+            }
+        .totop{
+            content: "";
+            position: absolute;
+            bottom:0;
+            right: 2%;
+            width: 0;
+            height: 0;
+            border: 20px solid rgba(255,255,255,0);
+            border-radius: 100%;
+            z-index: 11;
+        }
+    }
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 20;
+        display: none;
+    }
+    .cancel {
+        position: absolute;
+        z-index: 30;
+        bottom: 5px;
+        width: 100%;
+        text-align: center;
+        display: none;
+        .iconcancel {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            fill: $verse-color;
+            overflow: hidden;
+            z-index: 30;
+        }
+    }
+    .bomb-box{
+        position: absolute;
+        left: 50%;
+        margin-left: -125px;
+        width: 250px;
+        top: 50%;
+        margin-top: -240px;
+        height: 300px;
+        z-index: 30;
+        display: none;
+        .box-gender {
+            text-align: center;
+            display: flex;
+            width: 250px;
+            color: $verse-color;
+            .male {
+                flex-grow: 1;
+                color: $highlight2-color;
+                .icongender {
+                    width: 58px;
+                    height: 58px;
+                    margin-bottom: 0px;
+                    fill: $highlight2-color;
+                    overflow: hidden;
+                    background: $verse-color;
+                    border: 5px solid $verse-color;
+                    border-radius: 100%;
+                }
+            }
+            .female {
+                flex-grow: 1;
+                color: $highlight-color;
+                .icongender {
+                    width: 58px;
+                    height: 58px;
+                    fill: $highlight-color;
+                    overflow: hidden;
+                    background: $verse-color;
+                    border: 10px solid $verse-color;
+                    border-radius: 100%;
+                }
+            }
+            .gender-off {
+                color: darken($secondary-color, 20%);
+                .icongender {
+                    background: lighten($secondary-color, 20%);
+                    border-color: lighten($secondary-color, 20%);
+                    fill: darken($secondary-color, 20%);
+                }
+            }
+        }
+        .box-message {
+            width: 250px;
+            height: 255px;
+            margin-top: 30px;
+            background: $verse-color;
+            border-radius: 10px;
+            border: 1px solid $verse-color;
+            position: relative;
+            color: $primary-color;
+            .message-towhom {
+                margin-left: 13px;
+                margin-right: 12px;
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+                height: 35px;
+                line-height: 35px;
+                border-bottom: 1px solid lighten($secondary-color, 10%);
+                input {
+                    font-size: $secondary-fontsize;
+                    width: 140px;
+                    border: none;
+                    height: 33px;
+                    background: $verse-color;
+                }
+                .anonymous {
+                    height: 25px;
+                    width: 40px;
+                    line-height: 25px;
+                    text-align: center;
+                    border: 1px solid darken($secondary-color, 20%);
+                    border-radius: 5px;
+                }
+                .anonymous-on {
+                    background: darken($secondary-color, 20%);
+                    color: $verse-color;
+                }
+            }
+            .message-text {
+                margin: 10px;
+                textarea {
+                    font-size: $secondary-fontsize;
+                    width: 228px;
+                    height: 140px;
+                    background: $verse-color;
+                }
+            }
+        }
+        .box-message::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -50px;
+            left: 35px;
+            border: 25px solid $verse-color;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+        .box-message-right::before {
+            right: 35px;
+            left: auto;
+        }
+        .box-send {
+            margin-top: 20px;
+            border: 1px solid $highlight2-color;
+            border-radius: 10px;
+            background: $highlight2-color;
+            button {
+                width: 248px;
+                height: 40px;
+                text-align: center;
+                border: none;
+                background: none;
+                font-size: $primary-fontsize;
+                line-height: 40px;
+                color: $verse-color;
+            }
+        }
+        .box-send-right {
+            border: 1px solid $highlight-color;
+            background: $highlight-color;
+        }
+    }
+
+}

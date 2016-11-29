@@ -8,139 +8,157 @@
     <title>wesufe frontend</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/weui/dist/style/weui.css" />
+    <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.css" />
     <!-- endbower -->
     <!-- endbuild -->
+
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="/bower_components/weui/dist/style/weui.css">
-    <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.min.css">
-    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
 
-<body>
+<body class="course">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="swiper-container swiper-container-horizontal">
+        <div class="swiper-background"></div>
+        <div class="swiper-frame"></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide swiper-slide-active">
-                <p class="swiper-slide-weekday">TUE </p>
-                <p class="swiper-slide-date">26</p>
+                <p class="swiper-slide-weekday" value="2"></p>
+                <p class="swiper-slide-date"></p>
             </div>
             <div class="swiper-slide swiper-slide-next">
-                <p class="swiper-slide-weekday">WED </p>
-                <p class="swiper-slide-date">27</p>
+                <p class="swiper-slide-weekday"></p>
+                <p class="swiper-slide-date"></p>
             </div>
             <div class="swiper-slide">
-                <p class="swiper-slide-weekday">THU </p>
-                <p class="swiper-slide-date">28</p>
+                <p class="swiper-slide-weekday"></p>
+                <p class="swiper-slide-date"></p>
             </div>
             <div class="swiper-slide">
-                <p class="swiper-slide-weekday">FRI </p>
-                <p class="swiper-slide-date">29</p>
+                <p class="swiper-slide-weekday"></p>
+                <p class="swiper-slide-date"></p>
             </div>
             <div class="swiper-slide">
-                <p class="swiper-slide-weekday">SAT </p>
-                <p class="swiper-slide-date">30</p>
+                <p class="swiper-slide-weekday"></p>
+                <p class="swiper-slide-date"></p>
             </div>
             <div class="swiper-slide">
-                <p class="swiper-slide-weekday">SUN </p>
-                <p class="swiper-slide-date">31</p>
+                <p class="swiper-slide-weekday"></p>
+                <p class="swiper-slide-date"></p>
             </div>
             <div class="swiper-slide">
-                <p class="swiper-slide-weekday">MON </p>
-                <p class="swiper-slide-date">1</p>
+                <p class="swiper-slide-weekday"></p>
+                <p class="swiper-slide-date"></p>
             </div>
         </div>
-
     </div>
     <div class="panel">
         <div class="panel-bd">
-            <!-- <div class="panel-bd-icon"><i class="iconfont">&#xe72e;</i>&nbsp;&nbsp;上午</div> -->
-            <div class="panel-bd-box panel-bd-box-done">
-                <div class="panel-bd-box-icon"><i class="iconfont">&#x3441;</i></div>
+            <div class="panel-bd-box">
+                <div class="panel-bd-box-time">
+                    <p class="start-time">10:05</p>
+                    <p class="end-time">11:45</p>
+                </div>
+                <div class="panel-bd-box-icon"><i class="iconfont">&#xe607;</i></div>
                 <div class="panel-bd-box-course">
                     <h4 class="course-title">ERP综合实验(M5)</h4>
-                    <p>ERP实验室 &nbsp;&nbsp;&nbsp; 1-16周</p>
+                    <p>田博 &nbsp;&nbsp;&nbsp; 1-16周</p>
                 </div>
-                <div class="panel-bd-box-time">
-                    <div class="time-status">已结束</div>
-                    <p class="start-time">10:05</p><p class="end-time">11:45 下课</p>
-                    
+                <div class="panel-bd-box-place">
+                    <div class="ismajor">专业课</div>
+                    <p>ERP实验室</p>
                 </div>
             </div>
-            <!-- <div class="panel-bd-icon"><i class="iconfont">&#xe7e0;</i>&nbsp;&nbsp;下午</div> -->
-            <div class="panel-bd-box panel-bd-box-on">
-                <div class="panel-bd-box-icon"><i class="iconfont">&#x3440;</i></div>
+            <div class="panel-bd-box">
+                <div class="panel-bd-box-time">
+                    <p class="start-time">18:00</p>
+                    <p class="end-time">19:00</p>
+                </div>
+                <div class="panel-bd-box-icon"><i class="iconfont">&#xe608;</i></div>
                 <div class="panel-bd-box-course">
                     <h4 class="course-title">第二外语(德语)
                     </h4>
-                    <p>二教511 &nbsp;&nbsp;&nbsp; 1-16周</p>
+                    <p>夏晓文 &nbsp;&nbsp;&nbsp; 1-16周</p>
                 </div>
-                <div class="panel-bd-box-time">
-                    <div class="time-status time-status-on">进行中</div>
-                    <p class="start-time">13:20</p><p class="end-time">15:00 下课</p>
-                    
+                <div class="panel-bd-box-place">
+                    <div class="ismajor" style="display:none;">专业课</div>
+                    <p>二教511</p>
                 </div>
             </div>
             <div class="panel-bd-box">
-                <div class="panel-bd-box-icon"><i class="iconfont">&#x3442;</i></div>
-                <div class="panel-bd-box-course">
-                    <h4 class="course-title">哲学(M5)</h4>
-                    <p>三教406 &nbsp;&nbsp;&nbsp; 1-16周</p>
-                </div>
                 <div class="panel-bd-box-time">
-                    <div class="time-status">未开始</div>
-                    <p class="start-time">15:00</p><p class="end-time">16:40 下课</p>
-                    
+                    <p class="start-time">20:00</p>
+                    <p class="end-time">21:40</p>
+                </div>
+                <div class="panel-bd-box-icon"><i class="iconfont">&#xe609;</i></div>
+                <div class="panel-bd-box-course">
+                    <h4 class="course-title"> 哲学(M5)</h4>
+                    <p>张先 &nbsp;&nbsp;&nbsp; 1-16周</p>
+                </div>
+                <div class="panel-bd-box-place">
+                    <div class="ismajor">专业课</div>
+                    <p>三教406</p>
                 </div>
             </div>
             <!-- <div class="panel-bd-icon"><i class="iconfont">&#xe703;</i>&nbsp;&nbsp;晚上</div> -->
-            <div class="panel-bd-box">
-                <div class="panel-bd-box-icon"><i class="iconfont">&#x343f;</i></div>
-                <div class="panel-bd-box-course">
-                    <h4 class="course-title">哲学(M5)</h4>
-                    <p>三教406 &nbsp;&nbsp;&nbsp; 1-16周</p>
-                </div>
-                <div class="panel-bd-box-time">
-                    <div class="time-status">未开始</div>
-                    <p class="start-time">15:00</p><p class="end-time">16:40 下课</p>
-                    
-                </div>
-            </div>
-            <div class="panel-bd-box">
-                <div class="panel-bd-box-icon"><i class="iconfont">&#x343e;</i></div>
-                <div class="panel-bd-box-course">
-                    <h4 class="course-title">哲学(M5)</h4>
-                    <p>三教406 &nbsp;&nbsp;&nbsp; 1-16周</p>
-                </div>
-                <div class="panel-bd-box-time">
-                    <div class="time-status">未开始</div>
-                    <p class="start-time">15:00</p><p class="end-time">16:40 下课</p>
-                    
-                </div>
-            </div>
+        </div>
+        <div class="panel-line">
+            今天没有课啦！
         </div>
     </div>
-    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/swiper/dist/js/swiper.min.js"></script>
+    <script src="/bower_components/swiper/dist/js/swiper.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
+
     <script type="text/javascript">
     var swiper = new Swiper('.swiper-container', {
-        freeMode: true,
         slidesPerView: 3,
         spaceBetween: 0.1,
-        centeredSlides: true,
+        centeredSlides: true, 
+        slideToClickedSlide: true,       
+    	onSlideChangeEnd: function(swiper){
+	        var index=swiper.activeIndex;
+	        $('.swiper-slide-active p:eq(0)').attr("value");
+
+	    }
+    });
+
+    $(document).ready(function(){
+    	//设置日期
+    	var mydate = new Date();
+    	var today = new Array('周日','周一','周二','周三','周四','周五','周六'); 
+    	for (var i = 0; i < 7; i++) {
+    		$(".swiper-slide-weekday:eq("+i+")").text(today[(mydate.getDay()+i)%7]);
+    		$(".swiper-slide-weekday:eq("+i+")").attr("value",(mydate.getDay()+i)%7);
+    		var newdate=new Date(mydate.getTime()+24*3600*1000*i);
+    		$(".swiper-slide-date:eq("+i+")").text(newdate.getDate());
+    	}
+    	//判断已完成课程和当前课程
+    	if($('.swiper-slide-active p:eq(1)').text()==mydate.getDate()){
+    		$('.panel-bd-box').each(function(){
+    			var starttime=$(this).find('.start-time').text();
+    			var endtime=$(this).find('.end-time').text();
+    			var minutes_start=parseInt(starttime.substr(0,2),10)*60+parseInt(starttime.substr(3,2),10);
+    			var minutes_end=parseInt(endtime.substr(0,2),10)*60+parseInt(endtime.substr(3,2),10);
+    			var minutes_now=mydate.getHours()*60+mydate.getMinutes();
+
+    			if(minutes_end<minutes_now)
+    				$(this).addClass("panel-bd-box-done");
+    			if(minutes_now>minutes_start&minutes_now<minutes_end)
+    				$(this).addClass("panel-bd-box-on");
+
+    		})
+    	}
     });
     </script>
 </body>

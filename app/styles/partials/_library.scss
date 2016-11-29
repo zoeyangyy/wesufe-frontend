@@ -1,0 +1,131 @@
+
+
+
+.library{
+	position: relative;
+	width:100%;
+	height: 100%;
+    background: $bg-color;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: $secondary-fontsize;
+    color:$primary-color;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+	
+	.toppanel{
+		width: 100%;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position:fixed;
+		background:$bg-color;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		.icon {
+			width: 25px;
+            height: 25px;
+            fill: #333;
+            overflow: hidden;
+        }
+		p{
+			margin-left: 20px;
+			line-height: 40px;
+		}
+
+	}
+	.weui-search-bar{
+		top: 40px;
+		left: 0;
+		position: fixed;
+		width:100%;
+		background: $bg-color;
+		z-index: 10;
+		.weui-search-bar__form{		
+		
+			.weui-search-bar__box{
+
+				.weui-icon-search{
+
+				}
+				.weui-search-bar__input{
+
+				}
+				.weui-search-button{
+
+				}
+			}
+		}
+		.weui-search-bar__cancel-btn{
+			color: $primary-color;
+		}
+	}
+	.weui-search-bar::after{
+		border:none;
+	}
+	.weui-search-bar::before{
+		border:none;
+	}
+
+	.panel{
+		width: 100%;
+		margin-top: 88px;
+		font-size: $small-fontsize;		
+
+		.panel-bd-box{
+			width: 94%;
+			left: 3%;
+			position:relative;
+			background-color: $verse-color;
+			color: $secondary-color;
+			border-bottom:1px solid #ccc;
+			border-right:1px solid #ddd;
+			display: flex;
+			justify-content: center;
+			padding: 6px 0px 6px 10px;
+			margin-top:5px;
+			overflow: scroll;
+			.box-content{
+				flex: 1;
+				.bookname{
+					color:$primary-color;
+					font-size: $primary-fontsize;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow:hidden;
+					width: 300px;	
+				}
+				.line{
+					width:250px;
+					height:1px;
+					margin:3px auto 3px -10px;
+					padding:0;
+					background-color:#eee;
+					overflow:hidden;
+				}
+			}
+			.box-icon{
+				width: 35px;
+				display: flex;
+				align-items:center;
+				.icon {
+                        width: 30px;
+                        height: 30px;
+                        fill: #666;
+                        overflow: hidden;
+                    }
+			}
+		}
+	}
+	.loadmore{
+		height: 40px;
+		width: 100%;
+		text-align: center;
+		line-height: 40px;
+		font-size: $secondary-fontsize;
+		color: #ccc;
+	}
+
+}

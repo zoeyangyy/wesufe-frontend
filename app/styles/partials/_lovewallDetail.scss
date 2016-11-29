@@ -1,0 +1,212 @@
+
+.lovewallDetail{
+    width:100%;
+    height:100%;
+    font-size: $secondary-fontsize;
+    background: $bg-color; 
+
+    .toppanel{
+        padding-bottom: 10px;
+        .mainview-box{
+            width:100%;
+            display: flex;
+            justify-content:center;
+            margin-top:10px;
+            .mainview-box-dialog{
+                position:relative;
+                background-color: lighten($highlight2-color, 10%);
+                // background-color:rgba(203,133,137,0.8);
+                width: 90%;
+                padding-top: 5px;
+                border-radius:5px;
+                color: $verse-color;
+                .dialog-toppanel{
+                    display: flex;
+                    align-items: center;
+                    padding:5px;
+                    .icon{
+                        margin-left: 5px;
+                        width: 30px; 
+                        height: 30px;
+                        fill: currentColor;
+                        overflow: hidden;
+                    }
+                    .fromwho{
+                        margin-left: 5px;
+                        font-weight:bold;
+                    }
+                    .towhom{
+                        margin-left: 5px;
+                        font-weight:bold;
+                    }
+                    .time{
+                        font-size: $small-fontsize;
+                        position:absolute;
+                        right: 5px;
+                    }
+                }
+                .text{
+                    margin-bottom: 10px;
+                    padding:5px
+                }
+                .dialog-bottompanel{
+                    height: 30px;
+                    width: 100%;
+                    display: flex;
+                    .dialog-bottompanel-like{
+                        width: 50%;
+                        display: flex;
+                        justify-content:center;
+                        align-items:center;
+                        background: lighten($highlight2-color, 20%);
+                        border-bottom-left-radius:5px;
+                        .iconlike{
+                            width: 15px; height: 15px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                        .count{
+                            margin-left:5px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                    }
+                    .dialog-bottompanel-comment{
+                        width: 50%;
+                        display: flex;
+                        justify-content:center;
+                        align-items:center;
+                        border-left:1px solid $verse-color;
+                        background: lighten($highlight2-color, 20%);
+                        border-bottom-right-radius:5px;
+
+                        .iconcomment{
+                            width: 15px; height: 15px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                        .count{
+                            margin-left:5px;
+                            fill: #fff;
+                            overflow: hidden;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .mainview-box-reverse{
+            .mainview-box-dialog{
+                background: lighten($highlight-color,10%);
+                .dialog-bottompanel{
+                    .dialog-bottompanel-like{
+                        background: lighten($highlight-color,20%);
+                    }
+                    .dialog-bottompanel-comment{
+                        background: lighten($highlight-color,20%);
+                    }
+                }
+            }
+            
+        }
+    }
+    .mainview{
+        position:relative;
+        padding-bottom: 70px;
+        display: scroll;
+        .mainview-box{
+            width:100%;
+            display: flex;
+            flex-direction: row;
+            margin-top:20px;
+            .mainview-box-icon{
+                margin-left: 10px;
+                margin-right: 15px;
+                .icon{
+                   width: 40px; height: 40px;
+                   fill: currentColor;
+                   overflow: hidden;
+                }
+            }
+            .mainview-box-dialog{
+                position:relative;
+                background-color: $verse-color;
+                // background-color:rgba(203,133,137,0.8);
+                width: 280px;
+                border-radius:5px;
+                color: $primary-color;
+                .text{
+                    margin:5px 5px 10px 5px;
+                }
+                .time{
+                    font-size: $small-fontsize;
+                    text-align: right;
+                    margin-right: 5px;
+                }
+            }
+            .mainview-box-dialog::before{
+                  content:"";
+                  position:absolute;
+                  left: -20px;
+                  top: 15px;
+                  width:0;
+                  height:0;
+                  border:10px solid $verse-color;
+                  border-top-color:transparent;
+                  border-left-color:transparent;
+                  border-bottom-color:transparent;
+            }
+        }
+        .mainview-box-reverse{
+            flex-direction: row-reverse;
+            .mainview-box-icon{
+                margin-left:15px;
+                margin-right: 10px;
+            }
+            .mainview-box-dialog{
+                background: lighten($highlight-color,10%);
+                color: $verse-color;
+            }
+            .mainview-box-dialog::before{
+                left:280px;
+                top:15px;
+                border: 10px solid lighten($highlight-color,10%);
+                border-top-color:transparent;
+                border-bottom-color:transparent;
+                border-right-color:transparent;
+            }
+        }
+    }
+    .bottompanel{
+        position:fixed;
+        width:100%;
+        bottom:0px;
+        height: 50px;
+        padding:8px;
+        display: flex;
+        background: darken($bg-color,10%);
+        .bottompanel-input{
+            border-radius:5px;
+            background:$verse-color;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            border:none;
+            input{
+                height: 24px;
+                border:none;
+                flex: 1;
+            }
+        }
+        button{
+            border-radius:5px;
+            margin-left:5px;
+            background:$highlight-color;
+            color: $verse-color;
+            width:50px;
+            border:none;
+        }
+    }
+    
+
+}
