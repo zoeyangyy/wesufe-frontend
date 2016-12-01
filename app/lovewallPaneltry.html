@@ -19,43 +19,17 @@
     <!-- endbuild -->
 </head>
 
-<body class="lovewallPaneltry">
+<body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="lovewallPaneltry">
     <div class="iphone">
         <div class="iphone__upper">
             <a class="toppanel-box toppanel-box-on" id="sortTime" href="javascript:void(0)">默认排序</a>
             <a class="toppanel-box" id="sortLike" href="javascript:void(0)">热度最高</a>
         </div>
-        <div class="list__wrapper">
-            <!-- SVG -->
-            <div class="svg__wrapper">
-                <svg width="100%" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                        <filter id="goo">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                            <feBlend in="SourceGraphic" in2="goo" />
-                        </filter>
-                        <filter id="fgoo">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                        </filter>
-                    </defs>
-                    <g id="gooey-group">
-                        <path id="curve" d="M0 90 Q 161 90 322 90" fill="white"></path>
-                    </g>
-                    <g id="circle_group">
-                        <circle id="circle" cx="160" cy="190" r="20" fill="rgba(255,255,255,0)"></circle>
-                    </g>
-                    <!-- <path id="bottom-line" d="M0,120 L320,120 L320,90 L0,90" fill="white" stroke="white"></path> -->
-                </svg>
-                <svg width="90" height="90" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <path id="progress" d="M45,100a55,55 0 1,0 110,0a55,55 0 1,0 -110,0" fill="transparent" stroke="white" stroke-width="8"></path>
-                </svg>
-            </div>
+        <div class="outermainview">
             <div class="mainview">
                 <div class="mainview-box">
                     <div class="mainview-box-dialog">
@@ -170,7 +144,6 @@
                     </div>
                 </div>
             </div>
-            <div class="loadmore">正在加载中…</div>
         </div>
     </div>
     <div class="bottompanel">
@@ -185,7 +158,7 @@
         </svg>
         <a href="#" onclick="gotoTop();return false;" class="totop"></a>
     </div>
-    <div class="mask"></div>
+    <div class="mask">
     <form class="bomb-box">
         <div class="box-gender">
             <div class="male">
@@ -205,7 +178,7 @@
             <div class="message-towhom">
                 FROM:&nbsp;
                 <input type="text" name="sender" placeholder="某某">
-                <div class="anonymous">匿名</div>
+                <div class="anonymous">我要匿名</div>
             </div>
             <div class="message-towhom">
                 TO:&nbsp;
@@ -225,15 +198,17 @@
             <use xlink:href="#icon-close"></use>
         </svg>
     </div>
+    </div>
+    </div>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/swiper/dist/js/swiper.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <script src="/bower_components/iscroll/build/iscroll-probe.js"></script>
     <script type="text/javascript" src="//at.alicdn.com/t/font_fxyfioupbtaf9a4i.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script type="text/javascript" src="./scripts/dropload.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('.weui-textarea').on('keyup', function(event) {
@@ -253,41 +228,7 @@
             });
             $(this).addClass("toppanel-box-on");
         });
-function gotoTop(acceleration,stime) {
-       acceleration = acceleration || 0.1;
-       stime = stime || 10;
-       var x1 = 0;
-       var y1 = 0;
-       var x2 = 0;
-       var y2 = 0;
-       var x3 = 0;
-       var y3 = 0; 
-       if (document.documentElement) {
-           x1 = document.documentElement.scrollLeft || 0;
-           y1 = document.documentElement.scrollTop || 0;
-       }
-       if (document.body) {
-           x2 = document.body.scrollLeft || 0;
-           y2 = document.body.scrollTop || 0;
-       }
-       var x3 = window.scrollX || 0;
-       var y3 = window.scrollY || 0;
-     
-       // 滚动条到页面顶部的水平距离
-       var x = Math.max(x1, Math.max(x2, x3));
-       // 滚动条到页面顶部的垂直距离
-       var y = Math.max(y1, Math.max(y2, y3));
-     
-       // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
-       var speeding = 1 + acceleration;
-       window.scrollTo(Math.floor(x / speeding), Math.floor(y / speeding));
-     
-       // 如果距离不为零, 继续调用函数
-       if(x > 0 || y > 0) {
-           var run = "gotoTop(" + acceleration + ", " + stime + ")";
-           window.setTimeout(run, stime);
-       }
-    }
+
         $('.dialog-bottompanel-like').click(function() {
             if ($(this).find("use").attr("xlink:href") == "#icon-like") {
                 $(this).find("span").text(parseInt($(this).find("span").text()) + 1);
@@ -300,27 +241,56 @@ function gotoTop(acceleration,stime) {
         });
 
         $('.iconpost').click(function() {
-            $('.mask').slideToggle(500);
-            $('.bomb-box').slideToggle(500);
-            $('.cancel').slideToggle(500);
             $('body').css("overflow","hidden");
             $('html').css("overflow","hidden");
+            var srollPos = $(window).scrollTop();
+            $('.mask').css("top",srollPos);
+            $('.mask').fadeToggle(500);
+            $('.bomb-box').fadeToggle(500);
+            $('.cancel').fadeToggle(500);
         });
 
         $('.cancel').click(function() {
-            $('.mask').slideToggle(500);
-            $('.bomb-box').slideToggle(500);
-            $('.cancel').slideToggle(500);
+            $('.mask').fadeToggle(500);
+            $('.bomb-box').fadeToggle(500);
+            $('.cancel').fadeToggle(500);
             $('body').css("overflow","");
             $('html').css("overflow","");
         });
 
-        // document.addEventListener("touchmove", function(e) {
-        //     if (flag == 0) {
-        //         e.preventDefault();
-        //         e.stopPropagation();
-        //     }
-        // }, false);
+        $("#returnTop").click(function () {
+            var speed=200;//滑动的速度
+            $('body,html').animate({ scrollTop: 0 }, speed);
+            return false;
+        });
+
+        $('.outermainview').dropload({
+        scrollArea : window,
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
+            domUpdate  : '<div class="dropload-update">↑释放更新</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+            domNoData  : '<div class="dropload-noData">没有更多了</div>'
+        },
+        loadUpFn : function(me){
+            
+                    me.resetload();
+        },
+        loadDownFn : function(me){
+                    
+                    add();
+                    // 即使加载出错，也得重置
+                    me.resetload();
+                
+        },
+        threshold : 50
+    });
 
         $('.female').click(function() {
             $('.male').addClass("gender-off");
@@ -345,302 +315,6 @@ function gotoTop(acceleration,stime) {
             }
         });
 
-        var range = 40; //距下边界长度/单位px  
-        var totalheight = 0;
-        var srollPos = 0;
-        var srollPosRecord = 0;
-        var START = undefined,
-            LIMIT = 100,
-
-            LIST = $('.list__wrapper'),
-            CURVE = $('#curve'),
-            CIRCLE = $('#circle'),
-            FRICTION = 1,
-            FPS = 35,
-            DIFFERENCE,
-            ANIMATING,
-            TRANSLATE_HEIGHT = 90,
-            REACHED_END = false,
-            CURVE_HEIGHT = 190,
-            START_CURVE = 'M-10 90 Q 161 90 332 90',
-            END_CURVE = 'M-10 90 Q 161 120 332 90';
-
-        $(".list__wrapper").on('touchstart mousedown', function(event) {
-            // event.stopPropagation(); 
-            // event.preventDefault();
-            START = event.clientY || event.originalEvent.touches[0].clientY || event.originalEvent.changedTouches[0].clientY;
-
-            $(window).on('touchmove mousemove', function(event) {
-
-                console.log("start" + START);
-                if (ANIMATING) {
-                    return false;
-                }
-                if (event.type === 'touchmove') {
-                    var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
-                    DIFFERENCE = (START - touch.clientY) * (-1);
-                    console.log("DI" + DIFFERENCE);
-                    srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)   
-                    console.log("srollPos" + srollPos);
-
-                } else {
-                    DIFFERENCE = (START - event.clientY) * (-1);
-                }
-                if (DIFFERENCE < 0) {
-
-                    totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
-                    // $('.toppanel').offset({top:srollPos,left:0});
-                    if (($(document).height() - range) <= totalheight) {
-                        add();
-                    }
-                } else {
-
-                    if (srollPosRecord == 0 && srollPos == 0) {
-                        event.stopPropagation();
-                        event.preventDefault();
-
-                        if (DIFFERENCE < TRANSLATE_HEIGHT) {
-                            translateSVG(DIFFERENCE);
-                            setOpacity(DIFFERENCE);
-                            REACHED_END = false;
-
-                        } else if (DIFFERENCE > TRANSLATE_HEIGHT && DIFFERENCE < CURVE_HEIGHT) {
-                            outerCurve(DIFFERENCE);
-                            setOpacity(DIFFERENCE);
-                            REACHED_END = false;
-                        } else if (DIFFERENCE >= CURVE_HEIGHT) {
-                            REACHED_END = true;
-                        }
-                    }
-                }
-            });
-        });
-
-        $(window).on('touchend mouseup', function(event) {
-            srollPosRecord = srollPos;
-            console.log("record" + srollPosRecord);
-            DIFFERENCE = 0;
-            START = 0;
-            if (REACHED_END) {
-                runAnimation();
-            } else {
-                backToStart();
-            }
-            $(window).off('mousemove');
-        });
-
-        function backToStart() {
-            if (DIFFERENCE > TRANSLATE_HEIGHT) {
-                setTimeout(function() {
-                    $({
-                        x: parseInt($('.list__wrapper').css('transform').split(',')[5])
-                    }).animate({
-                        x: -186
-                    }, {
-                        duration: 300,
-                        step: function(now) {
-                            $('.list__wrapper').css({
-                                transform: 'translate3d(0,' + now + 'px,0)'
-                            })
-                        }
-                    });
-                }, 100);
-                $('.mainview').velocity({
-                    opacity: 1,
-                    duration: 300,
-                    delay: 200
-                });
-
-                $("#curve").velocity({
-                    tween: [90, DIFFERENCE]
-                }, {
-                    duration: 150,
-                    loop: false,
-                    /*easing: [ 300, 8 ],*/
-                    easing: 'easeOutCubic',
-                    progress: function(e, c, r, s, t) {
-                        if (t > 90) {
-                            $('#curve').attr('fill', '#8B90B1');
-                        } else {
-                            $('#curve').attr('fill', 'white');
-                        }
-                        createCurve(t);
-                    }
-                });
-            } else {
-                $({
-                    x: parseInt($('.list__wrapper').css('transform').split(',')[5])
-                }).animate({
-                    x: -186
-                }, {
-                    duration: 300,
-                    step: function(now) {
-                        $('.list__wrapper').css({
-                            transform: 'translate3d(0,' + now + 'px,0)'
-                        })
-                    }
-                });
-                $('.mainview').velocity({
-                    opacity: 1,
-                    duration: 300,
-                    delay: 200
-                });
-                $("#curve").velocity({
-                    tween: [90, DIFFERENCE]
-                }, {
-                    duration: 150,
-                    loop: false,
-                    /*easing: [ 300, 8 ],*/
-                    easing: 'easeOutCubic',
-                    progress: function(e, c, r, s, t) {
-                        if (t > 90) {
-                            $('#curve').attr('fill', '#8B90B1');
-                        } else {
-                            $('#curve').attr('fill', 'white');
-                        }
-                        createCurve(t);
-                    }
-                });
-            }
-        }
-
-        function translateSVG(offset) {
-            var dist = offset - 186;
-            if (dist > -188) {
-                $(LIST).css({
-                    transform: 'translate3d(0,' + dist + 'px,0)'
-                });
-            }
-        }
-
-        function setOpacity(distance) {
-            distance = 140 - distance;
-            var pct = distance / 140;
-            $('.mainview').css({
-                opacity: pct
-            });
-        }
-
-        function runAnimation() {
-            ANIMATING = true;
-
-            $('svg:first-child').css({
-                'filter': 'url(#goo)',
-                '-webkit-filter': 'url(#goo)',
-                '-moz-filter': 'url(#goo)',
-                '-o-filter': 'url(#goo)',
-                '-ms-filter': 'url(#goo)'
-            });
-            $("#curve").velocity({
-                tween: [90, 200]
-            }, {
-                duration: 700,
-                loop: false,
-                easing: [0, 3, .3, 0.4],
-                progress: function(e, c, r, s, t) {
-                    console.log("b"+t);
-                    if (t > 90) {
-                        $('#curve').attr('fill', '#8B90B1');
-                    } else {
-                        $('#curve').attr('fill', 'white');
-                    }
-                    createCurve(t);
-                }
-            });
-            setTimeout(function() {
-                $('#circle_group').attr({
-                    'cy': 110
-                });
-                $('#circle').attr({
-                    fill: 'rgba(255,255,255,1)'
-                });
-                $('#circle').velocity({
-                    cy: 45
-                }, {
-                    duration: 200,
-                    easing: 'easeOutSine'
-                });
-
-                $('#progress').velocity({
-                    strokeDashoffset: 0
-                }, {
-                    duration: 800,
-                    delay: 300
-                });
-                $('svg:nth-child(2)').velocity({
-                    scale: 1.15,
-                    opacity: 0,
-                }, {
-                    duration: 400,
-                    delay: 1200,
-                    easing: [.11, 1, .34, .98]
-                });
-                setTimeout(function() {
-                    $('#curve').attr('d', END_CURVE);
-                }, 1450);
-                setTimeout(function() {
-                    $('svg:first-child').css({
-                        'filter': 'none',
-                        '-webkit-filter': 'none',
-                        '-moz-filter': 'none',
-                        '-o-filter': 'none',
-                        '-ms-filter': 'none'
-                    });
-                }, 1800);
-                $('#circle').velocity({
-                    cy: 140
-                }, {
-                    duration: 450,
-                    delay: 1300,
-                    complete: function() {
-                        $('#curve').attr('d', START_CURVE);
-                        $({
-                            x: parseInt($('.list__wrapper').css('transform').split(',')[5])
-                        }).animate({
-                            x: -186
-                        }, {
-                            step: function(now) {
-                                $('.list__wrapper').css({
-                                    transform: 'translate3d(0,' + now + 'px,0)'
-                                })
-                            }
-                        });
-                        $('.mainview').velocity({
-                            opacity: 1
-                        }, 500);
-                        $('#circle').attr('cy', 190);
-                        $('#circle').attr({
-                            fill: 'rgba(255,255,255,0)'
-                        });
-                        $('#progress').css({
-                            strokeDashoffset: 345.6
-                        });
-                        $('svg:nth-child(2)').velocity({
-                            scale: 1,
-                            opacity: 1
-                        }, 0)
-                        REACHED_END = false;
-                        ANIMATING = false;
-                    }
-                })
-            }, 50);
-
-        };
-
-        function outerCurve(height) {
-            var FRICTION_HEIGHT = height * FRICTION;
-            var d = "M0 90 Q 161 " + FRICTION_HEIGHT + " 322 90"
-            $(CURVE).attr({
-                d: d,
-                fill: '#8B90B1'
-            });
-        }
-
-        function createCurve(height) {
-            var FRICTION_HEIGHT = height * FRICTION;
-            var d = "M-10 90 Q 161 " + FRICTION_HEIGHT + " 332 90"
-            $(CURVE).attr('d', d);
-        }
         function add(){
             var arr = [];
                         arr.push(

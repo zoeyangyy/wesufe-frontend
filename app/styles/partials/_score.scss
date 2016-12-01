@@ -22,10 +22,34 @@
         align-items: center;
         justify-content: center;
         z-index: 1;
+        .toppanel-icon{
+        	width: 40px;
+	        height: 40px;
+	        background: #5c9cd8;
+	        margin-left: 10px;
+	        border-radius:4px;
+	        display: block;
+	        overflow: hidden;
+	        position: relative;
+
+        	.icongraph{
+        		position:relative;
+	        	width: 34px;
+	        	height: 34px;
+	        	fill: #fff;
+	        	overflow: hidden;
+	        	margin-left: 3px;
+	        	margin-top: 3px;
+	        }
+        } 
+        .toppanel-icon-on{
+        	box-shadow:3px 3px 3px darken(#5c9cd8,10%) inset;   
+        }      
         .custom-select-wrapper {
 		  position: relative;
 		  user-select: none;
 		  margin-left: 10px;
+		  max-width: 80%;
 		}
 		  .custom-select-wrapper select {
 		    display: none;
@@ -33,6 +57,7 @@
 		  .custom-select {
 		    position: relative;
 		    display: inline-block;
+		    max-width: 100%;
 		  }
 		    .custom-select-trigger {
 		      position: relative;
@@ -40,6 +65,7 @@
 		      padding:0 42px 0 12px;
 		      font-size: $secondary-fontsize;
 		      font-weight: 300;
+		      width: 250px;
 		      color: #fff;
 		      line-height: 40px;
 		      background: #5c9cd8;
@@ -133,23 +159,7 @@
 		    }
 
     }
-    .buttonline{
-		  position: relative;
-	      display: block;
-	      padding:0 12px 0 12px;
-	      font-size: $secondary-fontsize;
-	      width: 180px;
-	      font-weight: 300;
-	      color: $highlight-color;
-	      line-height: 30px;
-	      background: #fff;
-	      border-radius: 4px;
-	      border:none;
-	      left:50%;
-	      margin-left:-90px;
-	      margin-bottom: 15px;
-    }
-
+  
 	.panel{
 		width: 100%;
 		margin-top: -1px;
@@ -170,7 +180,7 @@
 				flex: 1;
 			}     
 			.type{
-				width: 80px;
+				width: 70px;
 			}   
 			p{
 				width: 40px;
@@ -179,23 +189,46 @@
 		}
 		.panel-bd-box-top{
 			
-			background-color: $verse-color;
+			background-color: #ddd;
 			color: #666;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin:5px 10px;
-			padding:10px;
+			margin:15px 10px 5px 10px;
+			padding:5px 10px;
 			border-radius:4px;
+
 			.subject{
 				flex: 1;
 			}     
 			.type{
-				width: 80px;
-			}   
-			p{
 				width: 40px;
+			}
+			.credit{
+				width: 50px;
+				display: flex;
+				align-items:center;
+			}   
+			.score{
+				display: flex;
+				width: 50px;
+				align-items:center;
+			}
+			.gpa{
+				width: 30px;
 				text-align: center;
+			}
+			.iconsort{
+				width: 20px;
+				height: 30px;
+				fill: #bbb;
+				overflow: hidden;
+			}
+			.iconsort-on{
+				width: 20px;
+				height: 30px;
+				fill: #fff;
+				overflow: hidden;
 			}
 		}
 		

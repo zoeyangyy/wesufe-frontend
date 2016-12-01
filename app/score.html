@@ -8,14 +8,12 @@
     <title>wesufe frontend</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/weui/dist/style/weui.css" />
     <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.css" />
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -32,63 +30,72 @@
             <option value="20142">2014-2015学年 第2学期</option>
             <option value="20141">2014-2015学年 第1学期</option>
         </select>
-        <select name="sort" id="sort" class="custom-select sources" placeholder="按学分排序">
-            <option value="credit">按学分排序</option>
-            <option value="score">按成绩排序</option>
-        </select>
+        <div class="toppanel-icon toppanel-icon-on">
+            <svg class="icongraph" aria-hidden="true">
+                <use xlink:href="#icon-tubiao"></use>
+            </svg>
+        </div>
     </div>
-    <button class="buttonline">展示绩点、学分走势图</button>
     <div class="panel">
         <div class="panel-bd-box-top">
-                    <h4 class="subject">课程名</h4>
-                    <p class="type">类型</p>
-                    <p class="credit">学分</p>
-                    <p class="score">成绩</p>
-                    <p class="gpa">绩点</p>
+            <h4 class="subject">课程名</h4>
+            <p class="type">类型</p>
+            <div class="credit">
+                <p>学分</p>
+                <svg class="iconsort iconsort-on" aria-hidden="true">
+                    <use xlink:href="#icon-paixu"></use>
+                </svg>
             </div>
+            <div class="score">
+                <p>成绩</p>
+                <svg class="iconsort" aria-hidden="true">
+                    <use xlink:href="#icon-paixu"></use>
+                </svg>
+            </div>
+            <p class="gpa">绩点</p>
+        </div>
         <div class="panel-bd">
             <div class="panel-bd-box">
-                    <h4 class="subject">运筹学（高级）</h4>
-                    <p class="type">必修课</p>
-                    <p class="credit">3</p>
-                    <p class="score">80</p>
-                    <p class="gpa">3</p>
+                <h4 class="subject">运筹学（高级）</h4>
+                <p class="type">必修课</p>
+                <p class="credit">3</p>
+                <p class="score">80</p>
+                <p class="gpa">3</p>
             </div>
             <div class="panel-bd-box">
-                    <h4 class="subject">中级微观经济学</h4>
-                    <p class="type">必修课</p>
-                    <p class="credit">3</p>
-                    <p class="score">80</p>
-                    <p class="gpa">3.7</p>
+                <h4 class="subject">中级微观经济学</h4>
+                <p class="type">必修课</p>
+                <p class="credit">3</p>
+                <p class="score">80</p>
+                <p class="gpa">3.7</p>
             </div>
             <div class="panel-bd-box">
-                    <h4 class="subject">运筹学（高级）</h4>
-                    <p class="type">必修课</p>
-                    <p class="credit">3</p>
-                    <p class="score">80.5</p>
-                    <p class="gpa">3</p>
+                <h4 class="subject">运筹学（高级）</h4>
+                <p class="type">必修课</p>
+                <p class="credit">3</p>
+                <p class="score">80.5</p>
+                <p class="gpa">3</p>
             </div>
             <div class="panel-bd-box">
-                    <h4 class="subject">运筹学（高级）</h4>
-                    <p class="type">通识选修课</p>
-                    <p class="credit">3</p>
-                    <p class="score">80</p>
-                    <p class="gpa">3</p>
+                <h4 class="subject">运筹学（高级）</h4>
+                <p class="type">通识选修课</p>
+                <p class="credit">3</p>
+                <p class="score">80</p>
+                <p class="gpa">3</p>
             </div>
         </div>
-        
     </div>
     <div class="panel-line">
-            平均分走势
-        </div>
+        平均分走势
+    </div>
     <div class="wrapper">
-      <canvas id="canvas" width="350" height="200" class="chart"></canvas>
+        <canvas id="canvas" width="350" height="200" class="chart"></canvas>
     </div>
     <div class="panel-line">
-            绩点走势
-        </div>
+        绩点走势
+    </div>
     <div class="wrapper">
-      <canvas id="canvas2" width="350" height="200" class="chart"></canvas>
+        <canvas id="canvas2" width="350" height="200" class="chart"></canvas>
     </div>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -97,20 +104,20 @@
     <!-- endbower -->
     <!-- endbuild -->
     <script src="//cdn.bootcss.com/Chart.js/0.2.0/Chart.min.js"></script>
-
-    <script>var myData = {
-    labels: [
-        '大一上',
-        '大一下',
-        '大二上',
-        '大二下',
-        '大三上',
-        '大三下',
-        '大四上',
-        '大四下'
-    ],
-    datasets: [
-        {
+    <script src="//at.alicdn.com/t/font_c36putqftw486w29.js"></script>
+    <script>
+    var myData = {
+        labels: [
+            '大一上',
+            '大一下',
+            '大二上',
+            '大二下',
+            '大三上',
+            '大三下',
+            '大四上',
+            '大四下'
+        ],
+        datasets: [{
             fillColor: 'rgba(203,133,137,.5)',
             strokeColor: 'rgba(203,133,137,1)',
             pointColor: 'rgba(203,133,137,1)',
@@ -125,24 +132,22 @@
                 34,
                 60
             ]
-        }
-    ]
-};
+        }]
+    };
 
-var configs ={
-    scaleOverride : true,
-    scaleSteps : 6, //y轴刻度的个数
-    scaleStepWidth : 0.5, //y轴每个刻度的宽度
-    scaleStartValue : 1,  //y轴的起始值
-};
-new Chart(document.getElementById('canvas').getContext('2d')).Line(myData);
-var myData = {
-    labels: [
-        'Mo',
-        'Di',
-    ],
-    datasets: [
-        {
+    var configs = {
+        scaleOverride: true,
+        scaleSteps: 6, //y轴刻度的个数
+        scaleStepWidth: 0.5, //y轴每个刻度的宽度
+        scaleStartValue: 1, //y轴的起始值
+    };
+    new Chart(document.getElementById('canvas').getContext('2d')).Line(myData);
+    var myData = {
+        labels: [
+            'Mo',
+            'Di',
+        ],
+        datasets: [{
             fillColor: 'rgba(111,168,220,.5)',
             strokeColor: 'rgba(111,168,220,1)',
             pointColor: 'rgba(111,168,220,1)',
@@ -151,50 +156,48 @@ var myData = {
                 3.44,
                 2.97
             ]
-        }
-    ]
-};
-new Chart(document.getElementById('canvas2').getContext('2d')).Line(myData,configs);
-//# sourceURL=pen.js
-</script>
+        }]
+    };
+    new Chart(document.getElementById('canvas2').getContext('2d')).Line(myData, configs);
+    //# sourceURL=pen.js
+    </script>
     <script type="text/javascript">
-
-    $(document).ready(function(){
+    $(document).ready(function() {
         //设置日期
         $(".custom-select").each(function() {
-          var classes = $(this).attr("class"),
-              id      = $(this).attr("id"),
-              name    = $(this).attr("name");
-          var template =  '<div class="' + classes + '">';
-              template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-              template += '<div class="custom-options">';
-              $(this).find("option").each(function() {
+            var classes = $(this).attr("class"),
+                id = $(this).attr("id"),
+                name = $(this).attr("name");
+            var template = '<div class="' + classes + '">';
+            template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+            template += '<div class="custom-options">';
+            $(this).find("option").each(function() {
                 template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-              });
-          template += '</div></div>';
-          
-          $(this).wrap('<div class="custom-select-wrapper"></div>');
-          $(this).hide();
-          $(this).after(template);
+            });
+            template += '</div></div>';
+
+            $(this).wrap('<div class="custom-select-wrapper"></div>');
+            $(this).hide();
+            $(this).after(template);
         });
         $(".custom-option:first-of-type").hover(function() {
-          $(this).parents(".custom-options").addClass("option-hover");
+            $(this).parents(".custom-options").addClass("option-hover");
         }, function() {
-          $(this).parents(".custom-options").removeClass("option-hover");
+            $(this).parents(".custom-options").removeClass("option-hover");
         });
         $(".custom-select-trigger").on("click", function() {
-          $('html').one('click',function() {
-            $(".custom-select").removeClass("opened");
-          });
-          $(this).parents(".custom-select").toggleClass("opened");
-          event.stopPropagation();
+            $('html').one('click', function() {
+                $(".custom-select").removeClass("opened");
+            });
+            $(this).parents(".custom-select").toggleClass("opened");
+            event.stopPropagation();
         });
         $(".custom-option").on("click", function() {
-          $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
-          $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-          $(this).addClass("selection");
-          $(this).parents(".custom-select").removeClass("opened");
-          $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+            $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+            $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+            $(this).addClass("selection");
+            $(this).parents(".custom-select").removeClass("opened");
+            $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
         });
     });
     </script>

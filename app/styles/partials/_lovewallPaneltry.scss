@@ -1,25 +1,22 @@
-@import "../../../bower_components/compass-sass-mixins/lib/compass";
-
-.lovewallPaneltry{
-  height:100%;
-  width:100%;
- -webkit-tap-highlight-color:transparent;
-  background-color: $bg-color;
-  font-size:$secondary-fontsize;
-
+.lovewallPaneltry {
+    height: 100%;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background-color: $bg-color;
+    font-size: $secondary-fontsize;
     .iphone{
-        width:100%;
-        height: 100%;
+        padding-top:50px;
     }
-    .iphone__upper{
-        width:100%;
-        height:50px;
+    .iphone__upper {
+        width: 100%;
+        height: 50px;
         background-color: #fff;
         z-index: 2;
         position: fixed;
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        top:0;
         .toppanel-box {
             width: 50%;
             text-align: center;
@@ -30,30 +27,28 @@
             font-weight: bold;
         }
         .toppanel-box-on {
-            border-bottom: 2px solid darken($highlight2-color,10%);
-            color: darken($highlight2-color,10%);
+            border-bottom: 2px solid darken($highlight2-color, 10%);
+            color: darken($highlight2-color, 10%);
         }
-
     }
-    .list__wrapper{
-  @include transform(translate3d(0,-186px,0));
-  background-color: $bg-color;
-  overflow-y:scroll;
- margin-bottom:-186px;
- padding-top:50px;
+    .outermainview{
+        background-color: $bg-color;
+        overflow-y: scroll;
+        position: relative;
     }
-    .mainview{
-  // opacity:0.2;
-  cursor: -webkit-grab;
-  cursor: grab;
-  position: relative;
-    padding-bottom: 0px;
-    z-index: 1;
-      &:active { 
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-  }
+    .mainview {
+        // opacity:0.2;
+        cursor: -webkit-grab;
+        cursor: grab;
+        position: relative;
+        padding-bottom: 0px;
+        z-index: 1;
+        
+        &:active {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
         .mainview-box {
             width: 100%;
             display: flex;
@@ -67,7 +62,7 @@
                 padding-top: 5px;
                 border-radius: 5px;
                 color: $verse-color;
-                a{
+                a {
                     color: $verse-color;
                 }
                 .dialog-toppanel {
@@ -98,7 +93,7 @@
                 }
                 .text {
                     padding: 10px;
-                    a{
+                    a {
                         color: $verse-color;
                     }
                 }
@@ -149,8 +144,8 @@
                     }
                 }
             }
-    }
-    .mainview-box-reverse {
+        }
+        .mainview-box-reverse {
             .mainview-box-dialog {
                 background: lighten($highlight-color, 10%);
                 .dialog-bottompanel {
@@ -162,51 +157,7 @@
                     }
                 }
             }
-    }
-}
-    .loadmore{
-        height: 40px;
-        width: 100%;
-        padding-left:15px;
-        line-height: 40px;
-        font-size: $secondary-fontsize;
-        color: #ccc;
-    }
-
-
-    .svg__wrapper{
-  position: relative;
-  z-index: 10;
-  background-color: $highlight-color;
-  cursor: -webkit-grab;
-  cursor: grab;
-  &:active { 
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-  }
-  svg{
-    &:first-child{
-      @include transform(translate3d(0,93px,0));
-    }
-    &:nth-child(2){
-      position: absolute;
-      top:93px;
-      left:50%;
-      margin-left: -45px;
-    }
-    #progress{
-      stroke-dashoffset:345.6;
-      stroke-dasharray:345.6;
-    }
-  }
-  .border{
-    position: absolute;
-    top:100%;
-    width:100%;
-    height:20px;
-    background-color: #fff;
-  }
+        }
     }
     .bottompanel {
         position: fixed;
@@ -215,7 +166,6 @@
         height: 60px;
         text-align: center;
         z-index: 10;
-        
         .bar {
             content: "";
             position: absolute;
@@ -228,49 +178,49 @@
             border-radius: 100%;
             z-index: 10;
         }
-            .iconpost {
+        .iconpost {
             position: absolute;
             width: 46px;
             height: 46px;
-            top:50%;
+            top: 50%;
             margin-top: -20px;
-            left:50%;
+            left: 50%;
             margin-left: -23px;
             fill: $riflered-color;
             overflow: hidden;
             z-index: 10;
-            }
+        }
         .bar2 {
             content: "";
             position: absolute;
-            bottom:0;
+            bottom: 0;
             right: 2%;
             width: 0;
             height: 0;
-            border: 20px solid rgba(255,255,255,.8);
+            border: 20px solid rgba(255, 255, 255, .8);
             border-radius: 100%;
             z-index: 10;
         }
-            .iconbacktop {
+        .iconbacktop {
             position: absolute;
             width: 30px;
             height: 30px;
             right: 2%;
-            margin-right:5px;
-            bottom:0;
-            margin-bottom:5px;
+            margin-right: 5px;
+            bottom: 0;
+            margin-bottom: 5px;
             fill: $secondary-color;
             overflow: hidden;
             z-index: 10;
-            }
-        .totop{
+        }
+        .totop {
             content: "";
             position: absolute;
-            bottom:0;
+            bottom: 0;
             right: 2%;
             width: 0;
             height: 0;
-            border: 20px solid rgba(255,255,255,0);
+            border: 20px solid rgba(255, 255, 255, 0);
             border-radius: 100%;
             z-index: 11;
         }
@@ -301,7 +251,7 @@
             z-index: 30;
         }
     }
-    .bomb-box{
+    .bomb-box {
         position: absolute;
         left: 50%;
         margin-left: -125px;
@@ -372,14 +322,14 @@
                 border-bottom: 1px solid lighten($secondary-color, 10%);
                 input {
                     font-size: $secondary-fontsize;
-                    width: 140px;
+                    width: 100px;
                     border: none;
                     height: 33px;
                     background: $verse-color;
                 }
                 .anonymous {
                     height: 25px;
-                    width: 40px;
+                    width: 80px;
                     line-height: 25px;
                     text-align: center;
                     border: 1px solid darken($secondary-color, 20%);
@@ -437,5 +387,59 @@
             background: $highlight-color;
         }
     }
-
+    .dropload-up,
+    .dropload-down {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        font-size: 12px;
+        /* 开启硬件加速 */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    .dropload-down {
+        height: 50px;
+    }
+    .dropload-refresh,
+    .dropload-update,
+    .dropload-load,
+    .dropload-noData {
+        height: 50px;
+        line-height: 50px;
+        padding-left:20px;
+    }
+    .dropload-load .loading {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        margin: 6px;
+        border: 2px solid #666;
+        border-bottom-color: transparent;
+        vertical-align: middle;
+        -webkit-animation: rotate 0.75s linear infinite;
+        animation: rotate 0.75s linear infinite;
+    }
+    @-webkit-keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        50% {
+            -webkit-transform: rotate(180deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }
