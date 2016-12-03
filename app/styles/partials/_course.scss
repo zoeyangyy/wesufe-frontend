@@ -8,6 +8,11 @@
 }
 html{
 	background:$bg-color;
+	height:100%;
+	overflow-y:scroll;
+}
+body{
+	height:100%;
 }
 
 .course {
@@ -19,7 +24,6 @@ html{
     color:$primary-color;
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
      -webkit-tap-highlight-color:transparent;
 
 	.swiper-container {
