@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wesufe frontend</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/weui/dist/style/weui.css" />
+    <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body class="exam">
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="toppanel">
+            <a class="toppanel-box toppanel-box-on" id="LargeScale" href="javascript:void(0)">大规模考</a>
+            <a class="toppanel-box" id="Advance" href="javascript:void(0)">提前考</a>
+    </div>
+    <div class="panel">
+        <div class="panel-bd">
+            <div class="panel-bd-box panel-bd-box-done">
+                <div class="panel-bd-box-time">
+                    <p class="date">2016-12-06</p>
+                    <p class="time">13:00-15:00</p>
+                </div>
+                <!-- <div class="panel-bd-box-icon"><i class="iconfont">&#xe605;</i></div> -->
+                <div class="panel-bd-box-course">
+                    <h4 class="course-title">ERP综合实验(M5)</h4>
+                    <p>第13周 &nbsp;&nbsp;&nbsp; 星期二</p>
+                </div>
+                <div class="panel-bd-box-place">
+                    <p>三教206</p>
+                </div>
+            </div>
+            <div class="panel-bd-box panel-bd-box-on">
+                <div class="panel-bd-box-time">
+                    <p class="date">2016-12-06</p>
+                    <p class="time">13:00-15:00</p>
+                </div>
+                <!-- <div class="panel-bd-box-icon"><i class="iconfont">&#xe606;</i></div> -->
+                <div class="panel-bd-box-course">
+                    <h4 class="course-title">第二外语(德语)
+                    </h4>
+                    <p>夏晓文 &nbsp;&nbsp;&nbsp; 1-16周</p>
+                </div>
+                <div class="panel-bd-box-place">
+                    <div class="today">今天</div>
+                    <p>二教511</p>
+                </div>
+            </div>
+            <div class="panel-bd-box">
+                <div class="panel-bd-box-time">
+                    <p class="date">2016-12-06</p>
+                    <p class="time">13:00-15:00</p>
+                </div>
+                <!-- <div class="panel-bd-box-icon"><i class="iconfont">&#xe607;</i></div> -->
+                <div class="panel-bd-box-course">
+                    <h4 class="course-title"> 哲学(M5)</h4>
+                    <p>张先 &nbsp;&nbsp;&nbsp; 1-16周</p>
+                </div>
+                <div class="panel-bd-box-place">
+                    <p>三教406</p>
+                </div>
+            </div>
+            <!-- <div class="panel-bd-icon"><i class="iconfont">&#xe703;</i>&nbsp;&nbsp;晚上</div> -->
+        </div>
+        <div class="panel-line">
+            没有更多了
+        </div>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/swiper/dist/js/swiper.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 0.1,
+        centeredSlides: true, 
+        slideToClickedSlide: true,       
+        onSlideChangeEnd: function(swiper){
+            var index=swiper.activeIndex;
+            $('.swiper-slide-active p:eq(0)').attr("value");
+
+        }
+    });
+
+    $(document).ready(function(){
+        //设置日期
+        var mydate = new Date();
+        var today = new Array('周日','周一','周二','周三','周四','周五','周六'); 
+        for (var i = 0; i < 7; i++) {
+            $(".swiper-slide-weekday:eq("+i+")").text(today[(mydate.getDay()+i)%7]);
+            $(".swiper-slide-weekday:eq("+i+")").attr("value",(mydate.getDay()+i)%7);
+            var newdate=new Date(mydate.getTime()+24*3600*1000*i);
+            $(".swiper-slide-date:eq("+i+")").text(newdate.getDate());
+        }
+        //判断已完成课程和当前课程
+        if($('.swiper-slide-active p:eq(1)').text()==mydate.getDate()){
+            $('.panel-bd-box').each(function(){
+                var starttime=$(this).find('.start-time').text();
+                var endtime=$(this).find('.end-time').text();
+                var minutes_start=parseInt(starttime.substr(0,2),10)*60+parseInt(starttime.substr(3,2),10);
+                var minutes_end=parseInt(endtime.substr(0,2),10)*60+parseInt(endtime.substr(3,2),10);
+                var minutes_now=mydate.getHours()*60+mydate.getMinutes();
+
+                if(minutes_end<minutes_now)
+                    $(this).addClass("panel-bd-box-done");
+                if(minutes_now>minutes_start&minutes_now<minutes_end)
+                    $(this).addClass("panel-bd-box-on");
+
+            })
+        }
+    });
+    </script>
+</body>
+
+</html>

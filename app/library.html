@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>wesufe frontend</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/weui/dist/style/weui.css" />
+    <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body class="library">
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="toppanel">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-daxue"></use>
+        </svg>
+        <p>上海财经大学图书馆</p>
+    </div>
+    <div class="weui-search-bar" id="searchBar">
+        <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+                <i class="weui-icon-search"></i>
+                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="" name="book" data-keyword="{$keyword}">
+                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+            </div>
+            <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                <i class="weui-icon-search"></i>
+                <span>搜索</span>
+            </label>
+        </form>
+        <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+    </div>
+    
+    <div class="panel">
+        <div class="panel-bd">
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java in a nutshell : a desk</p>
+                    <div class="line"></div>
+                    <p class="author">Flanagan, David.  &nbsp;&nbsp;&nbsp;清华大学出版社, 2003.</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA-62/F455//Y</p>
+                    <p class="type"></p>
+                </div>
+                <div class="box-icon"><svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-arrowright"></use>
+                            </svg></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java高级实用编程</p>
+                    <div class="line"></div>
+                    <p class="author">管贻生编著  &nbsp;&nbsp;&nbsp;清华大学出版社 2004</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA/G653</p>
+                </div>
+                <div class="box-icon"><svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-arrowright"></use>
+                            </svg></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java in a nutshell : a desk</p>
+                    <div class="line"></div>
+                    <p class="author">Flanagan, David.  &nbsp;&nbsp;&nbsp;清华大学出版社, 2003.</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA-62/F455//Y</p>
+                    <p class="type"></p>
+                </div>
+                <div class="box-icon"><i class="iconfont">&#xe669;</i></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java高级实用编程</p>
+                    <div class="line"></div>
+                    <p class="author">管贻生编著  &nbsp;&nbsp;&nbsp;清华大学出版社 2004</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA/G653</p>
+                </div>
+                <div class="box-icon"><i class="iconfont">&#xe669;</i></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java in a nutshell : a desk</p>
+                    <div class="line"></div>
+                    <p class="author">Flanagan, David.  &nbsp;&nbsp;&nbsp;清华大学出版社, 2003.</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA-62/F455//Y</p>
+                    <p class="type"></p>
+                </div>
+                <div class="box-icon"><i class="iconfont">&#xe669;</i></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java高级实用编程</p>
+                    <div class="line"></div>
+                    <p class="author">管贻生编著  &nbsp;&nbsp;&nbsp;清华大学出版社 2004</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA/G653</p>
+                </div>
+                <div class="box-icon"><i class="iconfont">&#xe669;</i></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java in a nutshell : a desk</p>
+                    <div class="line"></div>
+                    <p class="author">Flanagan, David.  &nbsp;&nbsp;&nbsp;清华大学出版社, 2003.</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA-62/F455//Y</p>
+                    <p class="type"></p>
+                </div>
+                <div class="box-icon"><i class="iconfont">&#xe669;</i></div>
+            </a>
+            <a class="panel-bd-box">
+                <div class="box-content">
+                    <p class="bookname">Java高级实用编程</p>
+                    <div class="line"></div>
+                    <p class="author">管贻生编著  &nbsp;&nbsp;&nbsp;清华大学出版社 2004</p>
+                    <p class="pulisher"></p>
+                    <p class="number">书号：TP312JA/G653</p>
+                </div>
+                <div class="box-icon"><i class="iconfont">&#xe669;</i></div>
+            </a>
+        </div>
+        <div class="loadmore">正在加载中</div>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/swiper/dist/js/swiper.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="//at.alicdn.com/t/font_8lwn5qxd2jn0cnmi.js"></script>
+   
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var range = 50; //距下边界长度/单位px  
+            var num = 1;
+            var totalheight = 0;
+
+            $(window).scroll(function() {
+                var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)   
+                totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+                // $('.toppanel').offset({top:srollPos,left:0});
+                if (($(document).height() - range) <= totalheight) {
+                    var arr = [];
+                        arr.push(            '<a class="panel-bd-box">'+
+                                                '<div class="box-content">'+
+                                                    '<p class="bookname">Java高级实用编程</p>'+
+                                                    '<div class="line"></div>'+
+                                                   '<p class="author">管贻生编著  &nbsp;&nbsp;&nbsp;清华大学出版社 2004</p>'+
+                                                    '<p class="pulisher"></p>'+
+                                                    '<p class="number">书号：TP312JA/G653</p>'+
+                                                '</div>'+
+                                                '<div class="box-icon"><i class="iconfont">&#xe669;</i></div>'+
+                                            '</a>');
+                    $('.panel-bd').append(arr);
+                }
+            });
+        });
+
+
+    </script>
+    <script type="text/javascript" class="searchbar js_show">
+    $(function(){
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
+
+        function hideSearchResult(){
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+        function cancelSearch(){
+            hideSearchResult();
+            $searchBar.removeClass('weui-search-bar_focusing');
+            $searchText.show();
+        }
+
+        $searchText.on('click', function(){
+            $searchBar.addClass('weui-search-bar_focusing');
+            $searchInput.focus();
+        });
+        $searchInput
+            .on('blur', function () {
+                if(!this.value.length) cancelSearch();
+            })
+            .on('input', function(){
+                if(this.value.length) {
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            })
+        ;
+        $searchClear.on('click', function(){
+            hideSearchResult();
+            $searchInput.focus();
+        });
+        $searchCancel.on('click', function(){
+            cancelSearch();
+            $searchInput.blur();
+        });
+    });
+
+
+</script>
+</body>
+
+</html>
